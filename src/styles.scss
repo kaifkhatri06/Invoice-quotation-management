@@ -1,0 +1,126 @@
+/* Global Styles for Invoice Management System */
+
+/* Import Angular Material Theme */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+/* Print Styles */
+@media print {
+
+    /* Hide everything except print content */
+    body * {
+        visibility: hidden;
+    }
+
+    .print-container,
+    .print-container * {
+        visibility: visible;
+    }
+
+    .print-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    /* Hide navigation, buttons, etc. */
+    mat-toolbar,
+    .no-print,
+    button,
+    .actions-bar,
+    mat-chip {
+        display: none !important;
+    }
+
+    /* Optimize for printing */
+    @page {
+        margin: 0.5in;
+    }
+
+    /* Avoid page breaks inside elements */
+    table,
+    .invoice-header,
+    .invoice-parties,
+    .line-items {
+        page-break-inside: avoid;
+    }
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Material Design Enhancements */
+.mat-mdc-form-field {
+    display: block;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .show-on-mobile-only {
+        display: none !important;
+    }
+}
